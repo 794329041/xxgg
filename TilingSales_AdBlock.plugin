@@ -42,4 +42,4 @@ http-response ^https?:\/\/api\.(ainitpz|4hnovel|1000gxf)\.com\/App\/Resource\/Vo
 http-response ^https?:\/\/api\.(ainitpz|4hnovel|1000gxf)\.com\/App\/Resource\/Vod\/vurlDetail script-path=https://raw.githubusercontent.com/ZenmoFeiShi/Qx/refs/heads/main/TilingSales_getNav.js, requires-body=true, timeout=30, tag=瓜子影视-播放地址
 
 [MITM]
-hostname = %APPEND% api.ainitpz.com, api.4hnovel.com, api.1000gxf.com, rg829.8f3m24.com
+hostname = api.ainitpz.com, api.4hnovel.com, api.1000gxf.com, rg829.8f3m24.com
