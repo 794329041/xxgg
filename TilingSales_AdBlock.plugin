@@ -1,0 +1,45 @@
+#!name=瓜子影视净化
+#!desc=去除瓜子影视系列App内广告，由Quantumult X转换而来
+#!author=怎么肥事 (Loon 转换)
+#!homepage=https://github.com/ZenmoFeiShi/Qx
+#!icon=https://raw.githubusercontent.com/ZenmoFeiShi/Qx/main/icon.png
+
+[Rule]
+# 直接拒绝所有广告请求
+DOMAIN,api.ainitpz.com,REJECT
+DOMAIN,api.4hnovel.com,REJECT
+DOMAIN,api.1000gxf.com,REJECT
+DOMAIN,rg829.8f3m24.com,REJECT
+
+[URL Rewrite]
+# 广告接口拒绝
+^https?:\/\/api\.(ainitpz|4hnovel|1000gxf)\.com\/App\/Ad\/splashInfo - reject
+^https?:\/\/api\.(ainitpz|4hnovel|1000gxf)\.com\/App\/Ad\/noticeInfo - reject
+^https?:\/\/api\.(ainitpz|4hnovel|1000gxf)\.com\/App\/IndexList\/homeFloatAd - reject
+^https?:\/\/api\.(ainitpz|4hnovel|1000gxf)\.com\/App\/Ad\/activityInfo - reject
+^https?:\/\/api\.(ainitpz|4hnovel|1000gxf)\.com\/App\/Ad\/skitAdInfo - reject
+^https?:\/\/api\.(ainitpz|4hnovel|1000gxf)\.com\/App\/Ad\/countPopTotal - reject
+^https?:\/\/api\.(ainitpz|4hnovel|1000gxf)\.com\/App\/Ad\/barsUserAdInfo - reject
+^https?:\/\/api\.(ainitpz|4hnovel|1000gxf)\.com\/App\/ad\/config - reject
+^https?:\/\/api\.(ainitpz|4hnovel|1000gxf)\.com\/App\/Ad\/vajraInfo - reject
+^https?:\/\/api\.(ainitpz|4hnovel|1000gxf)\.com\/App\/Ad\/bannerInfo - reject
+^https?:\/\/api\.(ainitpz|4hnovel|1000gxf)\.com\/App\/Ad\/bardCacheAdInfo - reject
+^https?:\/\/api\.(ainitpz|4hnovel|1000gxf)\.com\/App\/Ad\/barsIndexAdInfo - reject
+^https?:\/\/api\.(ainitpz|4hnovel|1000gxf)\.com\/App\/Ad\/comicAdInfo - reject
+^https?:\/\/api\.(ainitpz|4hnovel|1000gxf)\.com\/App\/Ad\/liveEventAdInfo - reject
+^https?:\/\/api\.(ainitpz|4hnovel|1000gxf)\.com\/App\/Ad\/novelAdInfo - reject
+^https?:\/\/api\.(ainitpz|4hnovel|1000gxf)\.com\/App\/Ad\/sportAdInfo - reject
+^https?:\/\/api\.(ainitpz|4hnovel|1000gxf)\.com\/App\/Resource\/CommentAd\/show - reject
+^https?:\/\/rg829\.8f3m24\.com\/v0\.1\/public\/codepush\/update_check - reject
+
+[Script]
+# 修改导航/广告配置响应体
+http-response ^https?:\/\/api\.(ainitpz|4hnovel|1000gxf)\.com\/App\/Resource\/Config\/getNav script-path=https://raw.githubusercontent.com/ZenmoFeiShi/Qx/refs/heads/main/TilingSales_getNav.js, requires-body=true, timeout=30, tag=瓜子影视-修改导航
+http-response ^https?:\/\/api\.(ainitpz|4hnovel|1000gxf)\.com\/App\/Ad\/barsPlayAdInfo script-path=https://raw.githubusercontent.com/ZenmoFeiShi/Qx/refs/heads/main/TilingSales_getNav.js, requires-body=true, timeout=30, tag=瓜子影视-播放广告1
+http-response ^https?:\/\/api\.(ainitpz|4hnovel|1000gxf)\.com\/App\/Ad\/playAdInfo script-path=https://raw.githubusercontent.com/ZenmoFeiShi/Qx/refs/heads/main/TilingSales_getNav.js, requires-body=true, timeout=30, tag=瓜子影视-播放广告2
+http-response ^https?:\/\/api\.(ainitpz|4hnovel|1000gxf)\.com\/App\/IndexPlay\/vodAdvertisement script-path=https://raw.githubusercontent.com/ZenmoFeiShi/Qx/refs/heads/main/TilingSales_getNav.js, requires-body=true, timeout=30, tag=瓜子影视-点播广告
+http-response ^https?:\/\/api\.(ainitpz|4hnovel|1000gxf)\.com\/App\/Resource\/Vod\/showOne script-path=https://raw.githubusercontent.com/ZenmoFeiShi/Qx/refs/heads/main/TilingSales_getNav.js, requires-body=true, timeout=30, tag=瓜子影视-剧集详情
+http-response ^https?:\/\/api\.(ainitpz|4hnovel|1000gxf)\.com\/App\/Resource\/Vod\/vurlDetail script-path=https://raw.githubusercontent.com/ZenmoFeiShi/Qx/refs/heads/main/TilingSales_getNav.js, requires-body=true, timeout=30, tag=瓜子影视-播放地址
+
+[MITM]
+hostname = %APPEND% api.ainitpz.com, api.4hnovel.com, api.1000gxf.com, rg829.8f3m24.com
