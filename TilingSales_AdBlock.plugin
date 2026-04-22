@@ -34,12 +34,12 @@ DOMAIN,rg829.8f3m24.com,REJECT
 
 [Script]
 # 修改导航/广告配置响应体
-http-response ^https?:\/\/api\.(ainitpz|4hnovel|1000gxf)\.com\/App\/Resource\/Config\/getNav script-path=https://raw.githubusercontent.com/ZenmoFeiShi/Qx/refs/heads/main/TilingSales_getNav.js, requires-body=true, timeout=30, tag=瓜子影视-修改导航
-http-response ^https?:\/\/api\.(ainitpz|4hnovel|1000gxf)\.com\/App\/Ad\/barsPlayAdInfo script-path=https://raw.githubusercontent.com/ZenmoFeiShi/Qx/refs/heads/main/TilingSales_getNav.js, requires-body=true, timeout=30, tag=瓜子影视-播放广告1
-http-response ^https?:\/\/api\.(ainitpz|4hnovel|1000gxf)\.com\/App\/Ad\/playAdInfo script-path=https://raw.githubusercontent.com/ZenmoFeiShi/Qx/refs/heads/main/TilingSales_getNav.js, requires-body=true, timeout=30, tag=瓜子影视-播放广告2
-http-response ^https?:\/\/api\.(ainitpz|4hnovel|1000gxf)\.com\/App\/IndexPlay\/vodAdvertisement script-path=https://raw.githubusercontent.com/ZenmoFeiShi/Qx/refs/heads/main/TilingSales_getNav.js, requires-body=true, timeout=30, tag=瓜子影视-点播广告
-http-response ^https?:\/\/api\.(ainitpz|4hnovel|1000gxf)\.com\/App\/Resource\/Vod\/showOne script-path=https://raw.githubusercontent.com/ZenmoFeiShi/Qx/refs/heads/main/TilingSales_getNav.js, requires-body=true, timeout=30, tag=瓜子影视-剧集详情
-http-response ^https?:\/\/api\.(ainitpz|4hnovel|1000gxf)\.com\/App\/Resource\/Vod\/vurlDetail script-path=https://raw.githubusercontent.com/ZenmoFeiShi/Qx/refs/heads/main/TilingSales_getNav.js, requires-body=true, timeout=30, tag=瓜子影视-播放地址
+http-response ^https?:\/\/api\.(ainitpz|4hnovel|1000gxf)\.com\/App\/Resource\/Config\/getNav script-path=https://raw.githubusercontent.com/794329041/xxgg/refs/heads/main/TilingSales_getNav.js, requires-body=true, timeout=30, tag=瓜子影视-修改导航
+http-response ^https?:\/\/api\.(ainitpz|4hnovel|1000gxf)\.com\/App\/Ad\/barsPlayAdInfo script-path=https://raw.githubusercontent.com/794329041/xxgg/refs/heads/main/TilingSales_getNav.js, requires-body=true, timeout=30, tag=瓜子影视-播放广告1
+http-response ^https?:\/\/api\.(ainitpz|4hnovel|1000gxf)\.com\/App\/Ad\/playAdInfo script-path=https://raw.githubusercontent.com/794329041/xxgg/refs/heads/main/TilingSales_getNav.js, requires-body=true, timeout=30, tag=瓜子影视-播放广告2
+http-response ^https?:\/\/api\.(ainitpz|4hnovel|1000gxf)\.com\/App\/IndexPlay\/vodAdvertisement script-path=https://raw.githubusercontent.com/794329041/xxgg/refs/heads/main/TilingSales_getNav.js, requires-body=true, timeout=30, tag=瓜子影视-点播广告
+http-response ^https?:\/\/api\.(ainitpz|4hnovel|1000gxf)\.com\/App\/Resource\/Vod\/showOne script-path=https://raw.githubusercontent.com/794329041/xxgg/refs/heads/main/TilingSales_getNav.js, requires-body=true, timeout=30, tag=瓜子影视-剧集详情
+http-response ^https?:\/\/api\.(ainitpz|4hnovel|1000gxf)\.com\/App\/Resource\/Vod\/vurlDetail script-path=https://raw.githubusercontent.com/794329041/xxgg/refs/heads/main/TilingSales_getNav.js, requires-body=true, timeout=30, tag=瓜子影视-播放地址
 
 [MITM]
 hostname = api.ainitpz.com, api.4hnovel.com, api.1000gxf.com, rg829.8f3m24.com
